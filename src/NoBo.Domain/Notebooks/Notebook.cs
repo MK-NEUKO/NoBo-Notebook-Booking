@@ -5,16 +5,51 @@ namespace NoBo.Domain.Notebooks;
 
 public sealed class Notebook : Entity
 {
-    public Notebook(Guid id) 
+    public Notebook(
+        Guid id,
+        Name name,
+        Description description,
+        ArticleNumber articleNumber,
+        Money price,
+        TimeSpan availability,
+        Display display,
+        Processor processor,
+        Graphic graphic,
+        Ram ram,
+        Storage storage,
+        OperatingSystem operatingSystem,
+        Battery battery,
+        IOPorts iOPorts,
+        Communication communication,
+        Audio audio,
+        Camera camera,
+        Dimensions dimensions) 
         : base(id)
     {
+        Name = name;
+        Description = description;
+        ArticleNumber = articleNumber;
+        Price = price;
+        Availability = availability;
+        Display = display;
+        Processor = processor;
+        Graphic = graphic;
+        Ram = ram;
+        Storage = storage;
+        OperatingSystem = operatingSystem;
+        Battery = battery;
+        IOPorts = iOPorts;
+        Communication = communication;
+        Audio = audio;
+        Camera = camera;
+        Dimensions = dimensions;
     }
 
     public Name Name { get; private set; }
     public Description Description { get; private set; }
     public ArticleNumber ArticleNumber { get; private set; }
     public Money Price { get; private set; }
-    public TimeSpan Avalebility { get; private set; }
+    public TimeSpan Availability { get; private set; }
     public Display Display { get; private set; }
     public Processor Processor { get; private set; }
     public Graphic Graphic { get; private set; }
