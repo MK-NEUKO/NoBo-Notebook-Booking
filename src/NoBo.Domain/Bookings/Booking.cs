@@ -43,15 +43,17 @@ public class Booking : Entity
     public DateTime? CancelledOnUtc { get; private set; }
 
     public static Booking Reserve(
-        Guid notebookId,
+        Notebook notebook,
         Guid userId,
         DateRange duration,
         DateTime utcNow,
-        PricingDetails pricingDetails)
+        PricingService pricingService)
     {
+        var pricingDetails = pricingService.CalculatePrice(notebook, duration);
+
         var booking = new Booking(
             Guid.NewGuid(),
-            notebookId,
+            notebook.Id,
             userId,
             duration,
             pricingDetails.PriceForPeriod,
@@ -61,6 +63,8 @@ public class Booking : Entity
             utcNow);
 
         booking.RaiseDomainEvent(new BookingReservedDomainEvent(booking.Id));
+
+        notebook.LastBookedOnUtc = utcNow;
 
         return booking;
     }

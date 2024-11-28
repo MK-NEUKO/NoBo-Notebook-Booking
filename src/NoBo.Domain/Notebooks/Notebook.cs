@@ -12,7 +12,7 @@ public sealed class Notebook : Entity
         Description description,
         ArticleNumber articleNumber,
         Money price,
-        TimeSpan availability,
+        DateTime lastBookedOnUtc,
         Display display,
         Processor processor,
         Graphic graphic,
@@ -32,7 +32,7 @@ public sealed class Notebook : Entity
         Description = description;
         ArticleNumber = articleNumber;
         Price = price;
-        Availability = availability;
+        LastBookedOnUtc = lastBookedOnUtc;
         Display = display;
         Processor = processor;
         Graphic = graphic;
@@ -52,7 +52,7 @@ public sealed class Notebook : Entity
     public Description Description { get; private set; }
     public ArticleNumber ArticleNumber { get; private set; }
     public Money Price { get; private set; }
-    public TimeSpan Availability { get; private set; }
+    public DateTime? LastBookedOnUtc { get; internal set; }
     public Display Display { get; private set; }
     public Processor Processor { get; private set; }
     public Graphic Graphic { get; private set; }
