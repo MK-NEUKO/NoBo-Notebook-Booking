@@ -13,6 +13,8 @@ public sealed class Notebook : Entity
     public Name Name { get; private set; }
     public Description Description { get; private set; }
     public ArticleNumber ArticleNumber { get; private set; }
+    public Money Price { get; private set; }
+    public TimeSpan Avalebility { get; private set; }
     public Display Display { get; private set; }
     public Processor Processor { get; private set; }
     public Graphic Graphic { get; private set; }
