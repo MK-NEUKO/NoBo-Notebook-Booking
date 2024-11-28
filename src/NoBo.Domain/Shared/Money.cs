@@ -1,4 +1,4 @@
-﻿namespace NoBo.Domain.Notebooks;
+﻿namespace NoBo.Domain.Shared;
 
 public record Money(decimal Amount, Currency Currency)
 {
@@ -12,4 +12,5 @@ public record Money(decimal Amount, Currency Currency)
     }
 
     public static Money Zero() => new Money(0, Currency.None);
+    public static Money Zero(Currency currency) => new Money(0, currency);
 }

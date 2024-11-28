@@ -1,4 +1,4 @@
-﻿namespace NoBo.Domain.Notebooks;
+﻿namespace NoBo.Domain.Shared;
 
 public record Currency
 {

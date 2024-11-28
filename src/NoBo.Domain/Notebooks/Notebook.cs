@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using NoBo.Domain.Abstractions;
+using NoBo.Domain.Shared;
 
 namespace NoBo.Domain.Notebooks;
 
@@ -19,11 +20,12 @@ public sealed class Notebook : Entity
         Storage storage,
         OperatingSystem operatingSystem,
         Battery battery,
-        IOPorts iOPorts,
+        IoPorts ioPorts,
         Communication communication,
         Audio audio,
         Camera camera,
-        Dimensions dimensions) 
+        Dimensions dimensions,
+        List<Accessories> accessories) 
         : base(id)
     {
         Name = name;
@@ -38,11 +40,12 @@ public sealed class Notebook : Entity
         Storage = storage;
         OperatingSystem = operatingSystem;
         Battery = battery;
-        IOPorts = iOPorts;
+        IoPorts = ioPorts;
         Communication = communication;
         Audio = audio;
         Camera = camera;
         Dimensions = dimensions;
+        Accessories = accessories;
     }
 
     public Name Name { get; private set; }
@@ -57,9 +60,10 @@ public sealed class Notebook : Entity
     public Storage Storage { get; private set; }
     public OperatingSystem OperatingSystem { get; private set; }
     public Battery Battery { get; private set; }
-    public IOPorts IOPorts { get; private set; }
+    public IoPorts IoPorts { get; private set; }
     public Communication Communication { get; private set; }
     public Audio Audio { get; private set; }
     public Camera Camera { get; private set; }
     public Dimensions Dimensions { get; private set; }
+    public List<Accessories> Accessories { get; private set; } = new();
 }

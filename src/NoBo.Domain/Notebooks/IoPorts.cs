@@ -1,6 +1,6 @@
 ﻿namespace NoBo.Domain.Notebooks;
 
-public record IOPorts(
+public record IoPorts(
     string Usb,
     string Hdmi,
     string Ethernet,
