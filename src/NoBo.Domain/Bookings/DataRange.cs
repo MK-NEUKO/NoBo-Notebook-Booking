@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace NoBo.Domain.Bookings;
+﻿namespace NoBo.Domain.Bookings;
 
 public record DateRange
 {
